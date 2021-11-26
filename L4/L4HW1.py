@@ -1,5 +1,6 @@
 # Task 14
 import math
+import heapq
 
 
 # 1.
@@ -118,3 +119,93 @@ def task14(any_list):
         next_number = " " * c + str(any_list[i])
         print(next_number)
 
+
+# 15.
+def task15():
+    score = 0
+    print(f"Your score is {score}")
+    for i in range(10):
+        number1 = input("Please enter the first number \n")
+        if int(number1) == -1:
+            print("Bye!")
+            break
+        number2 = input("Please enter the second number \n")
+        if int(number2) == -1:
+            print("Bye!")
+            break
+        result = input(f"What's the result of {number1} * {number2}? \n")
+        if int(result) == int(number1) * int(number2):
+            score += 1
+            print(f"Correct! \nYour new score is {score}")
+        else:
+            score += 0
+            print(f"Incorrect! \nYour score is  still {score}")
+
+
+# 16.
+# elegant.
+def task16(any_list):
+    return heapq.nlargest(2, any_list)
+
+
+# okay, okay. here you go with your long and "for-looped" answer.
+def task161(any_list):
+    max_value = any_list[0]
+    second_largest = any_list[0]
+    for i in range(len(any_list)):
+        if any_list[i] > max_value:
+            max_value = any_list[i]
+    for i in range(len(any_list)):
+        if any_list[i] > second_largest and any_list[i] != max_value:
+            second_largest = any_list[i]
+    return f"Max value is {max_value}, next value in line is {second_largest}."
+
+
+# 17.
+# imho would be better if we learned turtle
+def task17(any_number):
+    for i in range(any_number):
+        print('*' * any_number)
+
+
+# 18.
+def task18(any_number):
+    for i in range(any_number):
+        for j in range(any_number):
+            if i == 0 or i == any_number-1 or j == 0 or j == any_number-1:
+                print('*', end="")
+            else:
+                print(' ', end="")
+        print()
+
+
+# 19.
+def task19(any_number):
+    for i in range(any_number):
+        if i % 2 == 0:
+            print('*' * any_number)
+        else:
+            print(' ' + "*" * any_number)
+
+
+# 20.
+def task20(any_number1, any_number2):
+    if any_number1 < any_number2:
+        for i in range(any_number1, any_number2+1):
+            if i % 2 == 0:
+                print(i)
+    else:
+        return "You've entered incorrect numbers"
+
+
+# 21.
+def task21(any_number):
+    fact = 1
+    if any_number < 0:
+        print("Sorry, factorial can't be found from negative numbers")
+    elif any_number == 0:
+        print("The factorial of 0 equals 1.")
+    else:
+        for i in range(1, any_number+1):
+            fact = fact * i
+        print(f"The factorial of {any_number} is {fact}.")
