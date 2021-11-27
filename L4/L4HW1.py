@@ -112,12 +112,14 @@ def task13():
             print(f"{i} x {k} = {i * k}")
 
 
-# 14 unfinished
+# 14
 def task14(any_list):
-    for i, v in enumerate(any_list):
-        c = len(any_list)
-        next_number = " " * c + str(any_list[i])
-        print(next_number)
+    new_list = []
+    for i in any_list:
+        new_list.append(str(i))
+    for i, v in enumerate(new_list):
+        new_length = len(new_list[0])
+        print(" " * (3 + (new_length - len(new_list[i]))) + v)
 
 
 # 15.
@@ -209,3 +211,49 @@ def task21(any_number):
         for i in range(1, any_number+1):
             fact = fact * i
         print(f"The factorial of {any_number} is {fact}.")
+
+
+# 22.
+def task22(sum1, increase, months):
+    new_sum = sum1
+    for i in range(months):
+        new_sum = new_sum * (increase / 100) + new_sum
+    return new_sum
+
+
+# 23.
+def task23(any_number):
+    if any_number <= 1:
+        return False
+    for i in range(2, int(math.sqrt(any_number) + 1)):
+        if any_number % i == 0:
+            return False
+    return True
+
+
+# 24.
+def task24(any_number):
+    for i in range(1, any_number + 1):
+        for j in range(1, i + 1):
+            print("*", end="")
+        print()
+
+
+# 25.
+def task25(any_number):
+    space = 2 * any_number - 2
+    for i in range(0, any_number):
+        for j in range(0, space):
+            print(end=" ")
+        space = space - 1
+        for j in range(0, i + 1):
+            print("* ", end="")
+        print("")
+    space = any_number - 2
+    for i in range(any_number, -1, -1):
+        for j in range(space, 0, -1):
+            print(end=" ")
+        space = space + 1
+        for j in range(0, i + 1):
+            print("* ", end="")
+        print("")
