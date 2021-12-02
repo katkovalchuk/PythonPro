@@ -60,13 +60,12 @@ def my_func():
     else:
         print(int(number1) - int(number2))
 
-        # 6.
 
-
+# 6.
 def my_func2():
     number1 = input("Please enter the number.\n")
     number2 = input("Please enter the other number\n")
-    result = input(f"How much will be {number1} multiplied by {number2}?")
+    result = input(f"How much will be {number1} multiplied by {number2}?\n")
 
     correct_result = int(number1) * int(number2)
 
@@ -189,7 +188,7 @@ def my_func10(a, b, c):
     square_root = []
 
     d = b1 ** 2 - 4 * a1 * c1
-    
+
     if a != 0:
         if d > 0:
             x1 = (-b1 + math.sqrt(d)) / (2 * a1)
