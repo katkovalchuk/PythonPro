@@ -1,3 +1,5 @@
+# Task 18
+
 import random
 
 # 1.
@@ -20,7 +22,7 @@ b = a * 2
 x = a + b
 d = int(x * 0.00021)
 y = -1 + (x ** d)
-#z = x / y
+# z = x / y - commented to debug the next task
 z = z + 21
 print("Rezultat: " + str(z))
 
